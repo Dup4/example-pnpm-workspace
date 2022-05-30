@@ -1,7 +1,7 @@
 {
   "name": "@dup4/example-pnpm-workspace",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.1.5",
+  "packageManager": "pnpm@7.1.7",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/Dup4/example-pnpm-workspace#readme",
@@ -61,7 +61,7 @@
     "eslint": "^8.16.0",
     "esmo": "^0.14.1",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^7.1.5",
+    "pnpm": "^7.1.7",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4",
     "unbuild": "^0.7.4",
