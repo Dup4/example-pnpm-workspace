@@ -44,7 +44,7 @@ importers:
 
   packages/core:
     specifiers:
-      '@dup4/example-pnpm-workspace-utils': workspace:^0.0.0
+      '@dup4/example-pnpm-workspace-utils': workspace:^0.0.1
     dependencies:
       '@dup4/example-pnpm-workspace-utils': link:../utils
 

@@ -1,6 +1,6 @@
 {
   "name": "@dup4/example-pnpm-workspace-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Dup4 <lyuzhi.pan@gmail.com>",
   "repository": {
@@ -42,6 +42,6 @@
     "lint:build": "tsc --noEmit"
   },
   "dependencies": {
-    "@dup4/example-pnpm-workspace-utils": "workspace:^0.0.0"
+    "@dup4/example-pnpm-workspace-utils": "workspace:*"
   }
 }
