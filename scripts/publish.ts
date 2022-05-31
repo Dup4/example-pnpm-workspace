@@ -34,7 +34,7 @@ for (const target of glob.sync("packages/*")) {
 await $`git add .`;
 await $`git commit -m "chore: release ${mainVersion}"`;
 await $`git push`;
-await $`git tag ${mainVersion}`;
+await $`git tag v${mainVersion}`;
 await $`git push --tags`;
 
 await $`pnpm -r publish --access public`;
