@@ -1,54 +1,30 @@
 {
   "name": "@dup4/example-pnpm-workspace",
-  "version": "0.0.1",
+  "private": true,
+  "version": "0.0.0",
   "packageManager": "pnpm@7.1.7",
-  "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/Dup4/example-pnpm-workspace#readme",
-  "bugs": {
-    "url": "https://github.com/Dup4/example-pnpm-workspace/issues"
-  },
   "license": "MIT",
   "author": "Dup4 <lyuzhi.pan@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dup4/example-pnpm-workspace.git"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
+  "homepage": "https://github.com/Dup4/example-pnpm-workspace#readme",
+  "bugs": {
+    "url": "https://github.com/Dup4/example-pnpm-workspace/issues"
   },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "src",
-    "dist"
-  ],
-  "sideEffects": false,
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "start": "esmo src/index.ts",
-    "test": "vitest",
+    "build": "pnpm -r --filter=./packages/* run build",
+    "dev": "pnpm -r --parallel --filter=./packages/* run dev",
+    "start": "pnpm -r --parallel --filter=./packages/* run start",
+    "test": "pnpm -r --parallel --filter=./packages/* run test",
     "lint": "run-p lint:*",
-    "lint:build": "tsc --noEmit",
+    "lint:build": "pnpm -r --parallel --filter=./packages/* run lint:build",
     "lint:eslint": "eslint .",
-    "lint:style": "prettier --check src/*.ts src/**/*.ts",
+    "lint:style": "prettier --check ./packages/**/*.ts",
     "format": "run-p format:*",
     "format:eslint": "eslint --fix .",
-    "format:style": "prettier --write src/*.ts src/**/*.ts",
+    "format:style": "prettier --write ./packages/**/*.ts",
     "prepublishOnly": "npm run build",
     "release": "bumpp --commit --push --tag && npm publish"
   },

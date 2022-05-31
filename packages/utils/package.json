@@ -1,9 +1,17 @@
 {
   "name": "@dup4/example-pnpm-workspace-utils",
-  "version": "1.0.0",
-  "description": "",
-  "author": "Dup4 <lyuzhi.pan@gmail.com>",
+  "version": "0.0.0",
   "license": "MIT",
+  "author": "Dup4 <lyuzhi.pan@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dup4/example-pnpm-workspace.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/Dup4/example-pnpm-workspace/issues"
+  },
+  "homepage": "https://github.com/Dup4/example-pnpm-workspace/tree/main/packages/utils#readme",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -27,6 +35,11 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "start": "esmo src/index.ts",
+    "test": "vitest",
+    "lint:build": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   }
 }

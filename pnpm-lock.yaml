@@ -34,6 +34,15 @@ importers:
       vite: 2.9.9
       vitest: 0.7.13
 
+  packages/core:
+    specifiers:
+      '@dup4/example-pnpm-workspace-utils': workspace:^0.0.0
+    dependencies:
+      '@dup4/example-pnpm-workspace-utils': link:../utils
+
+  packages/utils:
+    specifiers: {}
+
 packages:
 
   /@ampproject/remapping/2.2.0:
