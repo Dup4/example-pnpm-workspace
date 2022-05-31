@@ -39,8 +39,7 @@
     "dev": "unbuild --stub",
     "start": "esmo src/index.ts",
     "test": "vitest",
-    "lint:build": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "lint:build": "tsc --noEmit"
   },
   "dependencies": {
     "@dup4/example-pnpm-workspace-utils": "workspace:^0.0.0"

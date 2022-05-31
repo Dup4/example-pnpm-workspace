@@ -39,7 +39,6 @@
     "dev": "unbuild --stub",
     "start": "esmo src/index.ts",
     "test": "vitest",
-    "lint:build": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "lint:build": "tsc --noEmit"
   }
 }
