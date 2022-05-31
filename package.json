@@ -1,7 +1,7 @@
 {
   "name": "@dup4/example-pnpm-workspace",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "packageManager": "pnpm@7.1.7",
   "license": "MIT",
   "author": "Dup4 <lyuzhi.pan@gmail.com>",
@@ -25,8 +25,8 @@
     "format": "run-p format:*",
     "format:eslint": "eslint --fix .",
     "format:style": "prettier --write ./packages/**/*.ts",
-    "prerelease": "npm run build",
-    "release": "pnpm run build && esmo scripts/publish.ts"
+    "prepublishOnly": "npm run build",
+    "release": "esmo scripts/publish.ts"
   },
   "devDependencies": {
     "@babel/types": "^7.18.0",
