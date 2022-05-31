@@ -15,10 +15,10 @@ const { data: pkg } = await io.json<PkgData>`package.json`;
 
 const mainVersion = pkg.version;
 
-glob.sync("packages/*").forEach(async (target) => {
+for (const target of glob.sync("packages/*")) {
   const stat = fs.statSync(target);
   if (!stat.isDirectory()) {
-    return;
+    continue;
   }
 
   const { data: subPkg, save } = await io.json<PkgData>`${path.join(
@@ -29,12 +29,12 @@ glob.sync("packages/*").forEach(async (target) => {
   await save();
 
   console.log(`> publish ${subPkg.name}@${subPkg.version}`);
-
-  await $`npm publish ${target} --access public`;
-});
+}
 
 await $`git add .`;
 await $`git commit -m "chore: release ${mainVersion}"`;
 await $`git push`;
 await $`git tag ${mainVersion}`;
 await $`git push --tags`;
+
+await $`pnpm -r publish --access public`;
